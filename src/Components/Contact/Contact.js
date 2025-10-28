@@ -49,7 +49,7 @@ export default function Contact() {
         <div className="contact-card">
           <span className="icon">📍</span>
           <div>
-            <strong>1 Blackhawk Cir</strong>
+            <strong>500 Lewis St</strong>
             <div>Downingtown, PA 19335</div>
           </div>
         </div>
