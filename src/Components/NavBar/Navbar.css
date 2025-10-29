@@ -137,17 +137,23 @@ body {
     padding: 10px 20px;
   }
 
+  .top-contact-content {
+    justify-content: flex-start !important;
+    padding-left: 0;
+  }
+
   .contact-info {
     gap: 12px;
     flex-direction: row;
+    justify-content: flex-start;
   }
 
   .call-text {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .phone-number {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 

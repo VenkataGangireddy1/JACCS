@@ -283,8 +283,8 @@
     }
     
     .deep-hero-bg {
-        height: 100vh;
-        min-height: 500px;
+        height: 70vh;
+        min-height: 400px;
         margin-top: 0;
         margin-bottom: 0 !important;
     }
@@ -380,8 +380,8 @@
     }
     
     .deep-hero-bg {
-        height: 100vh;
-        min-height: 450px;
+        height: 60vh;
+        min-height: 350px;
         margin-top: 0;
         margin-bottom: 0 !important;
     }
