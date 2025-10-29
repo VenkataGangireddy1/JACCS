@@ -82,7 +82,6 @@ function Navbar() {
         <a href="/" className="logo-link" onClick={handleLogoClick}>
           <div className="logo-container">
             <img src={JACCS} className="logo" alt="JACCS Logo" />
-            <span className="logo-tagline">Your Trusted Partner in Cleaning Services</span>
           </div>
         </a>
         

@@ -369,23 +369,125 @@
 
 /* Home Details */
 .home-details {
-  display: flex;
-  gap: 3rem;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 2rem 0;
-  padding: 2rem;
-  background: white;
-  border-radius: 16px;
-  border: 2px solid #f0f0f0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .counter-group {
   display: flex;
   flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.counter-group .input-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #14284B;
+  margin-bottom: 0.5rem;
+}
+
+.counter {
+  display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: center;
+  background: white;
+  border-radius: 30px;
+  padding: 0.25rem;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.counter-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: #e0e0e0;
+  color: #14284B;
+  font-size: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  margin: 0 8px;
+}
+
+.counter-btn:not(:disabled):hover {
+  background: #d4d4d4;
+}
+
+.counter-btn:disabled {
+  background: #f5f5f5;
+  color: #bdbdbd;
+  cursor: not-allowed;
+}
+
+.counter-value {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #14284B;
+  min-width: 60px;
+  text-align: center;
+  background: #FFE97D;
+  border-radius: 12px;
+  padding: 4px 16px;
+  margin: 0 16px;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .home-details {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .counter-group {
+    margin-bottom: 0;
+  }
+
+  .counter {
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-details {
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .counter-group .input-label {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .counter {
+    padding: 0.25rem 0.5rem;
+  }
+
+  .counter-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+    margin: 0 4px;
+  }
+
+  .counter-value {
+    font-size: 1.5rem;
+    min-width: 50px;
+    margin: 0 8px;
+    padding: 4px 12px;
+  }
 }
 
 .counter {
@@ -529,22 +631,66 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .quote-page {
+    padding-top: 120px;
+  }
+
   .quote-hero {
-    padding: 3rem 0 4rem;
+    padding: 2rem 0 2rem;
+  }
+
+  .quote-hero h1 {
+    font-size: 3rem;
+  }
+
+  .quote-content {
+    padding: 2rem 0;
+  }
+
+  .quote-form-wrapper {
+    padding: 2.5rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .quote-page {
+    padding-top: 100px;
+  }
+
+  .quote-hero {
+    padding: 1.5rem 0 1.5rem;
   }
   
   .quote-hero h1 {
     font-size: 2.5rem;
+    margin-bottom: 0.75rem;
   }
   
   .quote-hero p {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .quote-content {
+    padding: 1.5rem 0;
+    margin-top: 0;
   }
   
   .quote-form-wrapper {
-    padding: 2rem 1.5rem;
-    margin: 0 1rem;
+    padding: 1.5rem;
+    margin: 0 0.5rem;
+    border-radius: 16px;
+  }
+  
+  .form-section {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-heading {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
   }
   
   .form-grid {
@@ -554,37 +700,178 @@
   
   .cleaning-type-grid {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
   
   .home-details {
-    flex-direction: column;
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
   }
-  
-  .section-heading {
-    font-size: 1.3rem;
+
+  .counter-group {
+    margin-bottom: 0;
+  }
+
+  .counter {
+    max-width: 100%;
+    padding: 0.5rem;
   }
   
   .container {
-    padding: 0 0.5rem;
+    padding: 0 0.75rem;
+  }
+
+  .input-group {
+    margin-bottom: 1rem;
+  }
+
+  .quote-status {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-actions {
+    padding: 1.5rem 1rem;
   }
 }
 
 @media (max-width: 480px) {
+  .quote-page {
+    padding-top: 140px;
+  }
+
+  .quote-hero {
+    padding: 1rem 0 1rem;
+  }
+
   .quote-hero h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .quote-hero p {
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+
+  .quote-content {
+    padding: 1rem 0;
   }
   
   .quote-form-wrapper {
-    padding: 1.5rem 1rem;
+    padding: 1rem;
+    margin: 0 0.25rem;
+    border-radius: 12px;
   }
   
   .form-section {
-    padding: 1.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+  }
+
+  .section-heading {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-icon {
+    font-size: 1.25rem;
+    margin-right: 0.5rem;
+  }
+
+  .input-group {
+    margin-bottom: 0.75rem;
+  }
+
+  .input-label {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .quote-form input,
+  .quote-form textarea,
+  .quote-form select {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .form-grid {
+    gap: 0.75rem;
+  }
+
+  .cleaning-type-grid {
+    gap: 0.5rem;
+  }
+
+  .cleaning-option {
+    padding: 0.75rem;
+  }
+
+  .option-title {
+    font-size: 0.95rem;
+  }
+
+  .option-description {
+    font-size: 0.75rem;
+  }
+
+  .home-details {
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .counter-group .input-label {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .counter {
+    padding: 0.25rem 0.5rem;
+  }
+
+  .counter-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+    margin: 0 4px;
+  }
+
+  .counter-value {
+    font-size: 1.5rem;
+    min-width: 50px;
+    margin: 0 8px;
+    padding: 4px 12px;
   }
   
   .btn {
-    padding: 0.875rem 2rem;
-    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .form-actions {
+    padding: 1rem 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .form-note {
+    font-size: 0.8rem;
+  }
+
+  .quote-status {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .field-error {
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
   }
 }

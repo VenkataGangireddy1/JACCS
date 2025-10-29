@@ -1,6 +1,6 @@
 /* Deep Cleaning page styles - matching Commercial component */
 .deep-page {
-  padding-top: 140px; /* Account for top contact bar + navbar */
+  padding-top: 0;
   margin-top: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   color: #222;
@@ -12,7 +12,7 @@
 .deep-hero.full-bleed { 
   margin-bottom: 0; 
   padding-bottom: 0; 
-  margin-top: -140px; /* Pull hero up to eliminate gap */
+  margin-top: 0;
   padding-top: 0;
 }
 
@@ -59,7 +59,8 @@
 
 /* First section spacing after hero */
 .deep-intro.container-row {
-  margin-top: 60px;
+  margin-top: 0;
+  padding-top: 60px;
 }
 
 /* layout helpers - matching Commercial component */
@@ -271,13 +272,26 @@
 
 /* Enhanced Mobile Responsive Styles */
 @media (max-width: 768px) {
-    .deep-cleaning-page {
+    .deep-page {
         padding-top: 0;
     }
     
+    .deep-hero.full-bleed {
+        margin-top: 0;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
     .deep-hero-bg {
-        height: 70vh;
-        min-height: 400px;
+        height: 100vh;
+        min-height: 500px;
+        margin-top: 0;
+        margin-bottom: 0 !important;
+    }
+    
+    .deep-hero-bg img {
+        height: 100%;
+        object-fit: cover;
     }
     
     .deep-hero-overlay {
@@ -293,6 +307,11 @@
         display: block;
         margin: 0 15px 40px;
         grid-template-columns: none;
+    }
+    
+    .deep-intro {
+        margin-top: 0 !important;
+        padding-top: 30px !important;
     }
     
     .text-column-deep,
@@ -334,12 +353,13 @@
         border-radius: 8px;
     }
     
-    .get-quote-btn {
+    .get-quote-btn, .hero-quote-btn {
         padding: 12px 30px;
         font-size: 14px;
         margin-top: 20px;
         width: auto;
         min-width: 160px;
+        min-height: 44px;
     }
     
     .deep-content,
@@ -349,9 +369,26 @@
 }
 
 @media (max-width: 480px) {
+    .deep-page {
+        padding-top: 0;
+    }
+    
+    .deep-hero.full-bleed {
+        margin-top: 0;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
     .deep-hero-bg {
-        height: 60vh;
-        min-height: 350px;
+        height: 100vh;
+        min-height: 450px;
+        margin-top: 0;
+        margin-bottom: 0 !important;
+    }
+    
+    .deep-hero-bg img {
+        height: 100%;
+        object-fit: cover;
     }
     
     .deep-hero-overlay {
@@ -365,6 +402,11 @@
     
     .container-row {
         margin: 0 10px 30px;
+    }
+    
+    .deep-intro {
+        margin-top: 0 !important;
+        padding-top: 25px !important;
     }
     
     .container-row h2 {
@@ -388,12 +430,13 @@
         border-radius: 8px;
     }
     
-    .get-quote-btn {
+    .get-quote-btn, .hero-quote-btn {
         padding: 10px 25px;
         font-size: 13px;
         width: 100%;
         max-width: 200px;
         margin-top: 15px;
+        min-height: 44px;
     }
     
     .deep-content,
@@ -406,25 +449,5 @@
 .deep-faq.container-row .faq-wrap {
   grid-column: 1 / -1;
   width: 100%;
-}
-
-.residential-page {
-  padding-top: 0; /* Remove top padding so content starts at top */
-}
-
-.res-hero {
-  position: relative;
-  min-height: 100vh; /* Full height for navbar overlay */
-  padding-top: 0;
-}
-
-.commercial-page {
-  padding-top: 0;
-}
-
-.com-hero-bg {
-  position: relative;
-  min-height: 100vh;
-  padding-top: 0;
 }
 

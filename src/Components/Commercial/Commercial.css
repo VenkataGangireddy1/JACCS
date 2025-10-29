@@ -1,6 +1,6 @@
 /* Commercial page styles */
 .commercial-page { 
-  padding-top: 140px; /* Account for top contact bar + navbar */
+  padding-top: 0;
   margin-top: 0; 
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; 
   color:#222;

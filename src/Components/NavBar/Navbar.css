@@ -54,13 +54,17 @@ body {
 .contact-info {
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: nowrap;
 }
 
 .call-text {
   font-size: 13px;
   font-weight: 500;
   color: white;
+  white-space: nowrap;
+  order: 1;
 }
 
 .phone-number {
@@ -69,6 +73,149 @@ body {
   font-weight: 700;
   font-size: 16px;
   transition: color 0.3s ease;
+  white-space: nowrap;
+  order: 2;
+}
+
+/* Tablets and medium devices (iPad Mini, Surface Duo, etc.) */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .top-contact-bar {
+    padding: 10px 20px;
+  }
+
+  .top-contact-content {
+    padding: 0 12px;
+    justify-content: center;
+  }
+
+  .contact-info {
+    gap: 12px;
+    width: auto;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .call-text {
+    font-size: 14px;
+  }
+
+  .phone-number {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-contact-bar {
+    padding: 8px 16px;
+  }
+
+  .top-contact-content {
+    padding: 0 8px;
+    justify-content: center;
+  }
+
+  .contact-info {
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .call-text {
+    font-size: 13px;
+  }
+
+  .phone-number {
+    font-size: 15px;
+  }
+}
+
+/* iPad Mini specific styles */
+@media (min-width: 744px) and (max-width: 768px) {
+  .top-contact-bar {
+    padding: 10px 20px;
+  }
+
+  .contact-info {
+    gap: 12px;
+    flex-direction: row;
+  }
+
+  .call-text {
+    font-size: 14px;
+  }
+
+  .phone-number {
+    font-size: 16px;
+  }
+}
+
+/* Mobile phones - vertical stacking */
+@media (max-width: 480px) {
+  .top-contact-bar {
+    padding: 10px 12px;
+  }
+
+  .top-contact-content {
+    padding: 0;
+    justify-content: center;
+  }
+
+  .contact-info {
+    gap: 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .call-text {
+    font-size: 12px;
+    order: 1;
+  }
+
+  .phone-number {
+    font-size: 16px;
+    font-weight: 800;
+    order: 2;
+  }
+}
+
+@media (max-width: 375px) {
+  .top-contact-bar {
+    padding: 8px 10px;
+  }
+
+  .contact-info {
+    gap: 6px;
+  }
+
+  .call-text {
+    font-size: 11px;
+  }
+
+  .phone-number {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 320px) {
+  .top-contact-bar {
+    padding: 8px 8px;
+  }
+
+  .contact-info {
+    gap: 5px;
+  }
+
+  .call-text {
+    font-size: 10px;
+  }
+
+  .phone-number {
+    font-size: 14px;
+  }
 }
 
 .phone-number:hover {
@@ -206,9 +353,9 @@ body {
 
 /* Logo */
 .logo {
-  height: 70px;
+  height: 100px;
   width: auto;
-  max-width: 120px;
+  max-width: 150px;
   object-fit: contain;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.18));
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -217,6 +364,7 @@ body {
   border-radius: 0;
   padding: 0;
   border: none;
+  margin-top: 8px;
 }
 
 .logo:hover {
@@ -225,7 +373,7 @@ body {
 }
 
 .navbar.scrolled .logo {
-  height: 50px;
+  height: 60px;
   /* keep scrolled logo transparent as well */
   background: transparent !important;
   padding: 0;
@@ -460,21 +608,67 @@ body {
 }
 
 /* Mobile Responsive Styles */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0 24px;
+  }
+
+  .navbar-contact-info {
+    gap: 10px;
+    margin-right: 15px;
+  }
+
+  .navbar-call-text {
+    font-size: 13px;
+  }
+
+  .navbar-phone {
+    font-size: 14px;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  .navbar.scrolled .logo {
+    height: 45px;
+  }
+}
+
 @media (max-width: 768px) {
+  .navbar-container {
+    padding-top: 0;
+  }
+
+  .top-contact-bar {
+    padding: 6px 20px;
+  }
+
   .navbar {
     --nav-padding: 0 20px;
-    min-height: 80px;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    min-height: 70px;
+    padding: 8px 20px;
+  }
+
+  .navbar.scrolled {
+    padding: 6px 20px;
   }
   
   .logo {
-    height: 50px;
-    max-width: 100px;
+    height: 45px;
+    max-width: 90px;
+  }
+
+  .logo-tagline {
+    font-size: 9px;
   }
   
   .navbar.scrolled .logo {
-    height: 40px;
+    height: 38px;
+  }
+
+  .navbar.scrolled .logo-tagline {
+    font-size: 8px;
   }
   
   /* Hide inline contact info on mobile when scrolled */
@@ -494,9 +688,9 @@ body {
     right: 0;
     width: 100%;
     flex-direction: column;
-    background: var(--nav-bg);
-    padding: 20px;
-    gap: 10px;
+    background: #F2CA27;
+    padding: 15px;
+    gap: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
   }
@@ -506,60 +700,114 @@ body {
   }
   
   .navbar-links a {
-    padding: 12px 0;
+    padding: 10px 0;
     text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    font-size: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+    color: #000;
+    font-weight: 500;
+  }
+
+  .navbar-links a:hover {
+    color: #214E73;
   }
   
   .navbar-links a.btn {
-    margin: 10px auto;
+    margin: 8px auto;
     max-width: 200px;
     border-bottom: none;
+    background: #214E73;
+    color: #F2CA27;
+  }
+
+  .navbar-links a.btn:hover {
+    background: #1a3d5c;
+    color: #fff;
   }
   
   .dropdown-content {
     position: static;
     box-shadow: none;
-    background: rgba(0,0,0,0.1);
-    margin-top: 10px;
+    background: rgba(0, 0, 0, 0.08);
+    margin-top: 8px;
+    border-radius: 8px;
   }
   
   .dropdown-content a {
     padding: 8px 0;
     font-size: 14px;
+    color: #000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .dropdown-content a:last-child {
+    border-bottom: none;
+  }
+
+  .dropdown-content a:hover {
+    color: #214E73;
   }
 }
 
 @media (max-width: 480px) {
+  .top-contact-bar {
+    padding: 6px 16px;
+  }
+
   .navbar {
-    --nav-padding: 0 15px;
-    min-height: 70px;
+    --nav-padding: 0 12px;
+    min-height: 65px;
+    padding: 6px 12px;
+  }
+
+  .navbar.scrolled {
+    padding: 5px 12px;
   }
   
   .logo {
-    height: 40px;
-    max-width: 80px;
+    height: 38px;
+    max-width: 75px;
+  }
+
+  .logo-tagline {
+    font-size: 8px;
+    margin-top: 2px;
+  }
+
+  .navbar.scrolled .logo {
+    height: 32px;
+  }
+
+  .navbar.scrolled .logo-tagline {
+    font-size: 7px;
   }
   
   .mobile-menu-btn {
-    font-size: 1.3rem;
-    padding: 6px;
+    font-size: 1.2rem;
+    padding: 5px;
+    width: 36px;
+    height: 36px;
   }
   
   .navbar-links {
-    padding: 15px;
+    padding: 12px;
+    gap: 6px;
   }
   
   .navbar-links a {
-    padding: 10px 0;
-    font-size: 15px;
+    padding: 8px 0;
+    font-size: 14px;
   }
   
   .navbar-links a.btn {
-    padding: 8px 16px;
-    height: 40px;
-    font-size: 14px;
+    padding: 7px 14px;
+    height: 36px;
+    font-size: 13px;
+  }
+
+  .dropdown-content a {
+    padding: 6px 0;
+    font-size: 13px;
   }
 }
 
